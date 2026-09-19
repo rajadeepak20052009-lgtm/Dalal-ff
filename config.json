@@ -1,0 +1,98 @@
+{
+  "port": 8080,
+  "site": {
+    "name": "DALALXLIKE",
+    "title": "DALALXFF | Fastest Free Fire Like Delivery",
+    "description": "Send Free Fire likes instantly with your redeem code. 2 second delivery, 100% safe, daily AutoLikes.",
+    "domain": "https://fflikeindia.pro",
+    "youtubeTutorial": "https://www.youtube.com/embed/OVxxNdMyJA0"
+  },
+  "brand": {
+    "logo": "/assets/logo.svg",
+    "logoMark": "/assets/logo-mark.svg",
+    "tagline": "YOUR DALAL",
+    "accent": "#ff7a18"
+  },
+  "contact": {
+    "whatsapp": "https://wa.me/918839686800",
+    "whatsappChannel": "https://chat.whatsapp.com/KYaJ7fVeXZw3mdESWjlUJB",
+    "telegram": "https://t.me/nldalal"
+  },
+  "owner": {
+    "id": "OWNER-001",
+    "name": "FF DALALXFF",
+    "telegramUsername": "@nldalal"
+  },
+  "service": {
+    "openTime": "05:30",
+    "closeTime": "22:00",
+    "timezoneOffsetMinutes": 330,
+    "dailyLimitPerUid": 1,
+    "autolikesMinBalance": 400,
+    "autolikesRunHour": 7
+  },
+  "payment": {
+    "upiId": "DALAL@FF",
+    "payeeName": "DALALXFF"
+  },
+  "packages": [
+    {
+      "likes": 1500,
+      "price": 120,
+      "label": "1.5K"
+    },
+    {
+      "likes": 3000,
+      "price": 240,
+      "label": "3K"
+    },
+    {
+      "likes": 4000,
+      "price": 340,
+      "label": "4K"
+    },
+    {
+      "likes": 5000,
+      "price": 490,
+      "label": "5K"
+    },
+    {
+      "likes": 7000,
+      "price": 650,
+      "label": "7K"
+    },
+    {
+      "likes": 8000,
+      "price": 750,
+      "label": "8K"
+    },
+    {
+      "likes": 10000,
+      "price": 800,
+      "label": "10K"
+    },
+    {
+      "likes": 20000,
+      "price": 1500,
+      "label": "20K"
+    }
+  ],
+  "likesApi": {
+    "url": "",
+    "method": "GET",
+    "key": "",
+    "serverName": "ind",
+    "likesPerRequest": 100,
+    "timeoutMs": 15000,
+    "note": "The API key lives in .env as LIKES_API_KEY - never in this file."
+  },
+  "telegram": {
+    "enabled": false,
+    "note": "Bot token and owner chat id must be provided only through environment variables."
+  },
+  "redeemCodes": {
+    "enabled": true,
+    "note": "Preloaded codes stay locked until the owner assigns one to a paid order.",
+    "codes": []
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "name": "dalalxff",
+  "version": "3.0.0",
+  "private": true,
+  "description": "FF Likes India - Free Fire likes delivery platform (modular pure Node.js backend + static frontend)",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node src/server.js",
+    "setup": "node scripts/create-admin.js",
+    "healthcheck": "node scripts/healthcheck.js",
+    "check": "node --check src/server.js && node --check src/routes/admin.js && node --check src/routes/likes.js && node --check src/routes/orders.js && node --check src/services/auth.js",
+    "build": "node scripts/healthcheck.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT"
+}
