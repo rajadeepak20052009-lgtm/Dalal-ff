@@ -1,0 +1,238 @@
+{
+  "version": 3,
+  "coupons": [
+    {
+      "code": "DALAL-100",
+      "total": 20000,
+      "balance": 20000,
+      "issued": true,
+      "source": "telegram",
+      "orderId": "ORDMU7P5JWN9AEC",
+      "createdAt": "2026-09-19T01:17:11.293Z",
+      "log": [
+        {
+          "at": "2026-09-19T01:17:11.293Z",
+          "type": "created",
+          "likes": 20000,
+          "source": "telegram"
+        },
+        {
+          "at": "2026-09-19T01:17:11.333Z",
+          "type": "issued",
+          "orderId": "ORDMU7P5JWN9AEC"
+        }
+      ],
+      "assignedAt": "2026-09-19T01:17:11.331Z"
+    }
+  ],
+  "orders": [
+    {
+      "id": "ORDMU7N5JEC0BFF",
+      "likes": 10000,
+      "price": 800,
+      "label": "10K",
+      "name": "Dal",
+      "contact": "Eueueuu",
+      "status": "review",
+      "utr": "ORDMU7N5JEC0BFF",
+      "coupon": null,
+      "createdAt": "2026-09-19T00:20:33.023Z",
+      "utrAt": "2026-09-19T00:20:44.040Z"
+    },
+    {
+      "id": "ORDMU7NP3AW47A6",
+      "likes": 1500,
+      "price": 120,
+      "label": "1.5K",
+      "name": "Hh",
+      "contact": "Hhh",
+      "status": "approved",
+      "utr": "ORDMU7NP3AW47A6",
+      "coupon": "ORDMU7NP3AW47A6",
+      "createdAt": "2026-09-19T00:35:45.273Z",
+      "utrAt": "2026-09-19T00:35:58.755Z",
+      "paymentApprovedAt": "2026-09-19T00:36:05.907Z",
+      "codeDeadlineAt": "2026-09-19T00:41:05.907Z",
+      "approvedAt": "2026-09-19T00:36:12.859Z"
+    },
+    {
+      "id": "ORDMU7NPW0F29FF",
+      "likes": 1500,
+      "price": 120,
+      "label": "1.5K",
+      "name": null,
+      "contact": null,
+      "status": "approved",
+      "utr": "ORDMU7NP3AW47A6",
+      "coupon": "ORDMU7NPW0F29FF",
+      "createdAt": "2026-09-19T00:36:22.487Z",
+      "utrAt": "2026-09-19T00:36:26.148Z",
+      "paymentApprovedAt": "2026-09-19T00:36:32.281Z",
+      "codeDeadlineAt": "2026-09-19T00:41:32.281Z",
+      "approvedAt": "2026-09-19T00:36:48.603Z"
+    },
+    {
+      "id": "ORDMU7P5JWN9AEC",
+      "likes": 20000,
+      "price": 1500,
+      "label": "20K",
+      "name": null,
+      "contact": null,
+      "status": "approved",
+      "utr": "Shshshshsh",
+      "coupon": "DALAL-100",
+      "createdAt": "2026-09-19T01:16:32.921Z",
+      "utrAt": "2026-09-19T01:16:37.319Z",
+      "paymentApprovedAt": "2026-09-19T01:16:55.723Z",
+      "codeDeadlineAt": "2026-09-19T01:21:55.723Z",
+      "approvedAt": "2026-09-19T01:17:11.333Z"
+    }
+  ],
+  "sends": [],
+  "autolikes": [
+    {
+      "id": "c941248d00c0",
+      "uid": "11111111111",
+      "coupon": "DALAL-100",
+      "region": "IND",
+      "active": true,
+      "lastRun": "2026-09-19",
+      "lastResult": "Likes API returned HTTP 500",
+      "totalDelivered": 0,
+      "createdAt": "2026-09-19T01:18:10.842Z"
+    }
+  ],
+  "admins": [
+    {
+      "id": "93a775ae249a7304",
+      "email": "owner@fflikeindia.pro",
+      "password": "scrypt:e929decd9da38e9e75b6a9b04b2bbe3f:afc70808bf9b59f1ba6163e403d7f48963c836c3ae16ea5c7873f040236fd664367735739ceb7c1533f215501102d43deddce78fc6337c29474091fd89e8c8b0",
+      "role": "owner",
+      "createdAt": "2026-09-19T00:19:45.730Z",
+      "lastLoginAt": "2026-09-19T01:01:06.267Z"
+    }
+  ],
+  "sessions": [],
+  "activity": [
+    {
+      "id": "1789777233187-xhvpg",
+      "type": "order-created",
+      "detail": {
+        "id": "ORDMU7N5JEC0BFF",
+        "likes": 10000,
+        "price": 800
+      },
+      "at": "2026-09-19T00:20:33.188Z"
+    },
+    {
+      "id": "1789777244197-n73o2",
+      "type": "order-utr",
+      "detail": {
+        "id": "ORDMU7N5JEC0BFF",
+        "utr": "ORDMU7N5JEC0BFF"
+      },
+      "at": "2026-09-19T00:20:44.198Z"
+    },
+    {
+      "id": "1789778145381-qp0ot",
+      "type": "order-created",
+      "detail": {
+        "id": "ORDMU7NP3AW47A6",
+        "likes": 1500,
+        "price": 120
+      },
+      "at": "2026-09-19T00:35:45.381Z"
+    },
+    {
+      "id": "1789778158821-xb8dd",
+      "type": "order-utr",
+      "detail": {
+        "id": "ORDMU7NP3AW47A6",
+        "utr": "ORDMU7NP3AW47A6"
+      },
+      "at": "2026-09-19T00:35:58.822Z"
+    },
+    {
+      "id": "1789778172895-hngvu",
+      "type": "order-approved",
+      "detail": {
+        "id": "ORDMU7NP3AW47A6",
+        "coupon": "ORDMU7NP3AW47A6"
+      },
+      "at": "2026-09-19T00:36:12.895Z"
+    },
+    {
+      "id": "1789778182509-go5m2",
+      "type": "order-created",
+      "detail": {
+        "id": "ORDMU7NPW0F29FF",
+        "likes": 1500,
+        "price": 120
+      },
+      "at": "2026-09-19T00:36:22.509Z"
+    },
+    {
+      "id": "1789778186222-14bhq",
+      "type": "order-utr",
+      "detail": {
+        "id": "ORDMU7NPW0F29FF",
+        "utr": "ORDMU7NP3AW47A6"
+      },
+      "at": "2026-09-19T00:36:26.222Z"
+    },
+    {
+      "id": "1789778208646-18fru",
+      "type": "order-approved",
+      "detail": {
+        "id": "ORDMU7NPW0F29FF",
+        "coupon": "ORDMU7NPW0F29FF"
+      },
+      "at": "2026-09-19T00:36:48.646Z"
+    },
+    {
+      "id": "1789779666325-tqrhl",
+      "type": "admin-login",
+      "detail": {
+        "email": "owner@fflikeindia.pro"
+      },
+      "at": "2026-09-19T01:01:06.326Z"
+    },
+    {
+      "id": "1789780592995-1qqur",
+      "type": "order-created",
+      "detail": {
+        "id": "ORDMU7P5JWN9AEC",
+        "likes": 20000,
+        "price": 1500
+      },
+      "at": "2026-09-19T01:16:32.995Z"
+    },
+    {
+      "id": "1789780597385-goe58",
+      "type": "order-utr",
+      "detail": {
+        "id": "ORDMU7P5JWN9AEC",
+        "utr": "Shshshshsh"
+      },
+      "at": "2026-09-19T01:16:37.385Z"
+    },
+    {
+      "id": "1789780631377-j6p6k",
+      "type": "order-approved",
+      "detail": {
+        "id": "ORDMU7P5JWN9AEC",
+        "coupon": "DALAL-100"
+      },
+      "at": "2026-09-19T01:17:11.377Z"
+    },
+    {
+      "id": "1789780690987-v8pmt",
+      "type": "autolikes-enabled",
+      "detail": {
+        "uid": "11111111111",
+        "coupon": "DALAL-100"
+      },
+      "at": "2026-09-19T01:18:10.987Z"
+    }
+  ]
+    }
