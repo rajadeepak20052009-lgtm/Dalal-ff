@@ -1,1 +1,26 @@
-h
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" role="img" aria-label="FF Likes India">
+  <defs>
+    <linearGradient id="fflFlame" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd166"/>
+      <stop offset="45%" stop-color="#ff7a18"/>
+      <stop offset="100%" stop-color="#ff2d55"/>
+    </linearGradient>
+    <linearGradient id="fflText" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#ffcf8b"/>
+    </linearGradient>
+  </defs>
+
+  <g transform="translate(4,6)">
+    <rect x="0" y="0" width="52" height="52" rx="15" fill="url(#fflFlame)"/>
+    <rect x="0" y="0" width="52" height="52" rx="15" fill="none" stroke="#ffffff" stroke-opacity=".28" stroke-width="1.5"/>
+    <path d="M26 9 L33.5 22 H18.5 Z" fill="#fff"/>
+    <path d="M26 43 L18.5 30 H33.5 Z" fill="#fff" fill-opacity=".85"/>
+    <rect x="13" y="22.5" width="26" height="7.5" rx="3.5" fill="#fff"/>
+  </g>
+
+  <g fill="url(#fflText)" font-family="'Rajdhani','Segoe UI',sans-serif" font-weight="700">
+    <text x="68" y="33" font-size="26" letter-spacing="1.5">FF LIKES</text>
+    <text x="69" y="49" font-size="12" letter-spacing="4.5" fill="#ff9a4d">INDIA • FASTEST</text>
+  </g>
+</svg>
