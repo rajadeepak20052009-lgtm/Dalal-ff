@@ -1,0 +1,46 @@
+/**
+ * Vercel -> backend proxy.
+ * Set BACKEND_URL in Vercel Environment Variables, for example:
+ * https://your-service.onrender.com
+ */
+export default async function handler(req, res) {
+  const base = String(process.env.BACKEND_URL || '').trim().replace(/\/$/, '');
+  if (!base) {
+    res.status(503).json({ ok: false, message: 'Backend is not configured. Set BACKEND_URL in Vercel.' });
+    return;
+  }
+
+  const incoming = new URL(req.url || '/', `https://${req.headers.host || 'localhost'}`);
+  const target = `${base}${incoming.pathname}${incoming.search}`;
+  const headers = new Headers();
+  for (const [key, value] of Object.entries(req.headers || {})) {
+    if (['host', 'content-length', 'connection'].includes(key.toLowerCase())) continue;
+    if (Array.isArray(value)) headers.set(key, value.join(', '));
+    else if (value != null) headers.set(key, String(value));
+  }
+
+  let body;
+  if (!['GET', 'HEAD'].includes(req.method || 'GET')) {
+    const chunks = [];
+    for await (const chunk of req) chunks.push(Buffer.from(chunk));
+    body = Buffer.concat(chunks);
+  }
+
+  try {
+    const upstream = await fetch(target, {
+      method: req.method,
+      headers,
+      body,
+      redirect: 'manual',
+    });
+
+    res.status(upstream.status);
+    upstream.headers.forEach((value, key) => {
+      if (!['transfer-encoding', 'connection'].includes(key.toLowerCase())) res.setHeader(key, value);
+    });
+    const data = Buffer.from(await upstream.arrayBuffer());
+    res.end(data);
+  } catch (error) {
+    res.status(502).json({ ok: false, message: 'Backend unavailable', detail: error.message });
+  }
+}
