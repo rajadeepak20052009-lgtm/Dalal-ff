@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>DALALXFF | Fastest Free Fire Like Delivery</title>
+<meta name="description" content="Send Free Fire likes instantly with your redeem code. 2 second delivery, 100% safe, daily AutoLikes for India server." />
+<meta property="og:title" content="DALALXFF | Fastest Free Fire Like Delivery" />
+<meta property="og:description" content="Instant Free Fire likes with your redeem code. Daily AutoLikes, 100% safe." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="canonical" href="https://fflikeindia.pro/" />
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="YOURDLAL" /></a>
+    <nav class="nav">
+      <a href="/buycoupon" class="cta"><i class="fas fa-ticket-alt"></i><span>Buy Coupon</span></a>
+      <a href="/support"><i class="fas fa-headset"></i><span>Support</span></a>
+    </nav>
+  </div>
+</header>
+
+<a class="float-wa" data-cfg-href="contact.whatsapp" href="#" target="_blank" rel="noopener" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+
+<main class="wrap">
+  <section class="hero">
+    <h1>YOUR <span class="gradient-text">DALAL</span> FOR FF LIKES</h1>
+    <p>India's fastest Free Fire like delivery. Enter your UID and redeem code — likes land in seconds.</p>
+    <div class="hero-chips">
+      <span><i class="fas fa-bolt"></i> 2s delivery</span>
+      <span><i class="fas fa-shield-halved"></i> 100% safe</span>
+      <span><i class="fas fa-clock"></i> <span id="svcWindow">06:30 - 22:00 IST</span></span>
+      <span><i class="fas fa-fire"></i> <span id="statLikes">0</span> likes sent</span>
+    </div>
+  </section>
+
+  <button class="wa-banner" id="waBanner">
+    <i class="fab fa-whatsapp icon"></i>
+    <span>
+      <b>Get 400+ Likes Daily</b>
+      <small>Message us on WhatsApp for the daily likes plan</small>
+    </span>
+    <i class="fas fa-arrow-right muted"></i>
+  </button>
+
+  <div class="tabs">
+    <button class="tab active" data-panel="sendPanel" type="button"><i class="fas fa-paper-plane"></i> Send Likes</button>
+    <button class="tab" data-panel="autoPanel" type="button"><i class="fas fa-infinity"></i> Daily AutoLikes</button>
+  </div>
+
+  <!-- ---------------- send likes ---------------- -->
+  <section id="sendPanel" class="panel">
+    <div class="card">
+      <h3><i class="fas fa-bolt" style="color:var(--brand)"></i> Instant Boost</h3>
+      <div class="card-sub">Send likes right now using your redeem code.</div>
+
+      <div class="input-label"><i class="fas fa-user"></i> Free Fire UID</div>
+      <input type="text" id="uid" placeholder="e.g. 123456789" inputmode="numeric" maxlength="20" autocomplete="off" />
+
+      <div class="input-label"><i class="fas fa-ticket-alt"></i> Redeem Code</div>
+      <input type="text" id="coupon" placeholder="e.g. FF-ABC12345" autocomplete="off" />
+      <div id="couponStatus"></div>
+
+      <div class="input-label"><i class="fas fa-globe"></i> Region</div>
+      <select id="region">
+        <option value="IND">India (IND)</option>
+      </select>
+
+      <div style="height:16px"></div>
+      <button class="btn" id="sendBtn" type="button"><i class="fas fa-bolt"></i> Send Likes Now</button>
+      <div id="sendResult"></div>
+    </div>
+
+    <div id="receipt"></div>
+
+    <div class="card" id="historyCard" hidden>
+      <div class="section-title" style="margin-top:0"><i class="fas fa-clock-rotate-left"></i> Your recent deliveries</div>
+      <div class="note info"><i class="fas fa-lock"></i> Sirf aapke UID / code ki deliveries dikhti hain — kisi aur ka data nahi.</div>
+      <div id="historyList"></div>
+    </div>
+
+    <div class="section-title"><i class="fab fa-youtube" style="color:#ff0000"></i> Tutorial video</div>
+    <iframe class="video-frame" id="tutorial" title="Tutorial" allowfullscreen loading="lazy"></iframe>
+  </section>
+
+  <!-- ---------------- autolikes ---------------- -->
+  <section id="autoPanel" class="panel" hidden>
+    <div class="card">
+      <h3><i class="fas fa-infinity" style="color:var(--brand)"></i> Daily AutoLikes</h3>
+      <div class="card-sub">Set it once — likes are delivered every morning automatically. Needs <b id="alMin">400</b>+ balance.</div>
+
+      <div class="input-label"><i class="fas fa-user"></i> Free Fire UID</div>
+      <input type="text" id="alUid" placeholder="Free Fire UID" inputmode="numeric" maxlength="20" autocomplete="off" />
+
+      <div class="input-label"><i class="fas fa-ticket-alt"></i> Redeem Code</div>
+      <input type="text" id="alCoupon" placeholder="FF-ABC12345" autocomplete="off" />
+
+      <div class="input-label"><i class="fas fa-globe"></i> Region</div>
+      <select id="alRegion">
+        <option value="IND">India (IND)</option>
+      </select>
+
+      <div style="height:16px"></div>
+      <button class="btn" id="alBtn" type="button"><i class="fas fa-play-circle"></i> Enable AutoLikes</button>
+      <div id="alResult"></div>
+      <div id="alList"></div>
+    </div>
+  </section>
+
+  <div style="height:18px"></div>
+  <a class="btn" href="/buycoupon"><i class="fas fa-cart-shopping"></i> Buy Coupons Now</a>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> DALALXFF.</span>
+    <span><a href="/support">Support</a> • <a data-cfg-href="contact.telegram" href="#" target="_blank" rel="noopener">Telegram</a></span>
+  </footer>
+</main>
+
+<script src="/js/core.js"></script>
+<script src="/js/page-home.js"></script>
+</body>
+</html>

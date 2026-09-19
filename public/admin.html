@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Admin Panel | FF Likes India</title>
+<meta name="description" content="DALAL LIKE OWNER DASHBOARD: ORDERS, REDEEM CODES, DELIVERIES, AUTO LIKES AND" />
+<meta name="robots" content="noindex, nofollow" />
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body class="admin-body">
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="FF Likes India" /></a>
+    <nav class="nav">
+      <span class="pill" id="adminEmail" hidden></span>
+      <a href="/" ><i class="fas fa-globe"></i><span>Site</span></a>
+      <a href="#" id="logoutBtn" hidden><i class="fas fa-right-from-bracket"></i><span>Sign out</span></a>
+    </nav>
+  </div>
+</header>
+
+<!-- ---------------- login ---------------- -->
+<section class="narrow login-wrap" id="loginView">
+  <div class="card" style="width:100%">
+    <h3><i class="fas fa-lock" style="color:var(--brand)"></i> Admin sign in</h3>
+    <div class="card-sub">Owner email aur password se login kijiye.</div>
+
+    <div class="input-label"><i class="fas fa-envelope"></i> Email</div>
+    <input type="email" id="email" placeholder="dalal.pro" autocomplete="username" />
+    <div class="input-label"><i class="fas fa-key"></i> Password</div>
+    <input type="password" id="password" placeholder="••••••••" autocomplete="current-password" />
+    <div style="height:16px"></div>
+    <button class="btn" id="loginBtn" type="button"><i class="fas fa-arrow-right-to-bracket"></i> Sign in</button>
+    <div id="loginResult"></div>
+  </div>
+</section>
+
+<!-- ---------------- dashboard ---------------- -->
+<main class="wrap admin-shell" id="appView" hidden>
+  <nav class="admin-nav">
+    <button data-view="dash" class="active"><i class="fas fa-chart-line"></i> Dashboard</button>
+    <button data-view="orders"><i class="fas fa-receipt"></i> Orders</button>
+    <button data-view="codes"><i class="fas fa-ticket-alt"></i> Codes</button>
+    <button data-view="sends"><i class="fas fa-bolt"></i> Deliveries</button>
+    <button data-view="autolikes"><i class="fas fa-infinity"></i> AutoLikes</button>
+    <button data-view="tools"><i class="fas fa-screwdriver-wrench"></i> Tools</button>
+  </nav>
+
+  <div>
+    <!-- dashboard -->
+    <section data-panel="dash">
+      <div class="grid cols-4" id="statCards"></div>
+
+      <div class="card" style="margin-top:16px">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-chart-column"></i> Likes — last 7 days</div>
+        <div class="bars" id="trendBars"></div>
+      </div>
+
+      <div class="grid cols-2" style="margin-top:16px">
+        <div class="card">
+          <div class="section-title" style="margin-top:0"><i class="fab fa-telegram"></i> Telegram bot</div>
+          <div id="tgStatus" class="card-sub">Loading…</div>
+          <div style="height:12px"></div>
+          <button class="btn btn-sm btn-ghost" id="tgTestBtn" type="button"><i class="fas fa-paper-plane"></i> Send test message</button>
+          <div id="tgResult"></div>
+        </div>
+        <div class="card">
+          <div class="section-title" style="margin-top:0"><i class="fas fa-wave-square"></i> Recent activity</div>
+          <div id="activityList" class="card-sub">Loading…</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- orders -->
+    <section data-panel="orders" hidden>
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-receipt"></i> Orders</div>
+        <div class="inline-form">
+          <div>
+            <label>Status filter</label>
+            <select id="orderFilter">
+              <option value="">All</option>
+              <option value="review">Awaiting review</option>
+              <option value="awaiting_code">Awaiting code</option>
+              <option value="approved">Approved</option>
+              <option value="rejected">Rejected</option>
+              <option value="expired">Expired</option>
+            </select>
+          </div>
+          <button class="btn btn-sm btn-ghost" id="orderReload" type="button"><i class="fas fa-rotate"></i> Refresh</button>
+        </div>
+        <div style="height:12px"></div>
+        <div class="table-wrap"><table id="ordersTable"><thead><tr><th>Order</th><th>Package</th><th>UTR</th><th>Status</th><th>Code</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+        <div id="orderResult"></div>
+      </div>
+    </section>
+
+    <!-- codes -->
+    <section data-panel="codes" hidden>
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-plus"></i> Add / top-up code</div>
+        <div class="inline-form">
+          <div><label>Code</label><input id="newCode" placeholder="FF-ABC12345" /></div>
+          <div><label>Likes</label><input id="newLikes" type="number" placeholder="1500" /></div>
+          <button class="btn btn-sm" id="addCodeBtn" type="button"><i class="fas fa-plus"></i> Save</button>
+        </div>
+        <div id="codeResult"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-ticket-alt"></i> Inventory</div>
+        <div class="inline-form">
+          <div><label>Search</label><input id="codeSearch" placeholder="Search code" /></div>
+          <button class="btn btn-sm btn-ghost" id="codeReload" type="button"><i class="fas fa-rotate"></i> Refresh</button>
+        </div>
+        <div style="height:12px"></div>
+        <div class="table-wrap"><table id="codesTable"><thead><tr><th>Code</th><th>Balance</th><th>Status</th><th>Order</th><th>Actions</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- deliveries -->
+    <section data-panel="sends" hidden>
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-bolt"></i> Deliveries</div>
+        <div class="inline-form">
+          <div><label>Search UID or code</label><input id="sendSearch" placeholder="123456789" /></div>
+          <button class="btn btn-sm btn-ghost" id="sendReload" type="button"><i class="fas fa-rotate"></i> Refresh</button>
+        </div>
+        <div style="height:12px"></div>
+        <div class="table-wrap"><table id="sendsTable"><thead><tr><th>Time</th><th>UID</th><th>Nickname</th><th>Likes</th><th>Code</th><th>Source</th></tr></thead><tbody></tbody></table></div>
+      </div>
+    </section>
+
+    <!-- autolikes -->
+    <section data-panel="autolikes" hidden>
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-infinity"></i> AutoLikes subscriptions</div>
+        <div class="row-actions">
+          <button class="btn btn-sm btn-ghost" id="alReload" type="button"><i class="fas fa-rotate"></i> Refresh</button>
+          <button class="btn btn-sm" id="alRunBtn" type="button"><i class="fas fa-play"></i> Run pending now</button>
+        </div>
+        <div style="height:12px"></div>
+        <div class="table-wrap"><table id="alTable"><thead><tr><th>UID</th><th>Code</th><th>Status</th><th>Last run</th><th>Result</th><th>Action</th></tr></thead><tbody></tbody></table></div>
+        <div id="alResult"></div>
+      </div>
+    </section>
+
+    <!-- tools -->
+    <section data-panel="tools" hidden>
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-bolt"></i> Manual delivery</div>
+        <div class="card-sub">Service band ho ya daily limit lag chuki ho, tab bhi ye kaam karta hai.</div>
+        <div class="inline-form" style="margin-top:10px">
+          <div><label>UID</label><input id="mUid" placeholder="123456789" /></div>
+          <div><label>Code</label><input id="mCode" placeholder="FF-ABC12345" /></div>
+          <button class="btn btn-sm" id="mSendBtn" type="button"><i class="fas fa-paper-plane"></i> Send</button>
+        </div>
+        <div id="mResult"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-user-shield"></i> Admin accounts</div>
+        <div class="inline-form">
+          <div><label>Email</label><input id="aEmail" placeholder="new@admin.com" /></div>
+          <div><label>Password</label><input id="aPass" type="password" placeholder="min 8 characters" /></div>
+          <button class="btn btn-sm" id="addAdminBtn" type="button"><i class="fas fa-plus"></i> Add</button>
+        </div>
+        <div id="adminResult"></div>
+        <div style="height:12px"></div>
+        <div class="table-wrap"><table id="adminTable"><thead><tr><th>Email</th><th>Role</th><th>Last login</th><th></th></tr></thead><tbody></tbody></table></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-key"></i> Change my password</div>
+        <div class="inline-form">
+          <div><label>Current</label><input id="curPass" type="password" /></div>
+          <div><label>New</label><input id="newPass" type="password" /></div>
+          <button class="btn btn-sm" id="changePassBtn" type="button"><i class="fas fa-check"></i> Update</button>
+        </div>
+        <div id="passResult"></div>
+      </div>
+
+      <div class="card">
+        <div class="section-title" style="margin-top:0"><i class="fas fa-database"></i> Data</div>
+        <div class="row-actions">
+          <button class="btn btn-sm btn-ghost" id="backupBtn" type="button"><i class="fas fa-copy"></i> Create backup</button>
+          <button class="btn btn-sm btn-ghost" id="exportBtn" type="button"><i class="fas fa-download"></i> Download JSON</button>
+        </div>
+        <div id="dataResult"></div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<script src="/js/core.js"></script>
+<script src="/js/page-admin.js"></script>
+</body>
+</html>

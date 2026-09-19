@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+<title>Buy Redeem Coupon | DALALXFF</title>
+<meta name="description" content="Buy a Free Fire likes redeem coupon with UPI. Instant approval, code delivered after payment verification." />
+<meta property="og:title" content="Buy Redeem Coupon | DALALXFF" />
+<meta property="og:description" content="UPI payment, instant code after verification." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="DALALXFF" /></a>
+    <nav class="nav">
+      <a href="/"><i class="fas fa-bolt"></i><span>Send Likes</span></a>
+      <a href="/support"><i class="fas fa-headset"></i><span>Support</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="narrow">
+  <div class="steps" id="steps">
+    <div class="step active" data-step="1"><i class="dot"></i>Package</div>
+    <div class="step" data-step="2"><i class="dot"></i>Pay UPI</div>
+    <div class="step" data-step="3"><i class="dot"></i>Get code</div>
+  </div>
+
+  <!-- step 1 -->
+  <section class="card" id="step1">
+    <h3><i class="fas fa-ticket-alt" style="color:var(--brand)"></i> Choose your package</h3>
+    <div class="card-sub">Bigger packs cost less per like. Codes never expire.</div>
+    <div class="pkg-grid" id="pkgGrid" style="margin-top:14px"></div>
+
+    <div class="input-label"><i class="fas fa-user"></i> Your name (optional)</div>
+    <input type="text" id="buyerName" placeholder="Name" autocomplete="off" />
+    <div class="input-label"><i class="fab fa-whatsapp"></i> WhatsApp / Telegram (optional)</div>
+    <input type="text" id="buyerContact" placeholder="So we can reach you" autocomplete="off" />
+
+    <div style="height:16px"></div>
+    <button class="btn" id="createBtn" type="button"><i class="fas fa-arrow-right"></i> Continue to payment</button>
+    <div id="step1Result"></div>
+  </section>
+
+  <!-- step 2 -->
+  <section class="card" id="step2" hidden>
+    <h3><i class="fas fa-indian-rupee-sign" style="color:var(--brand)"></i> Pay <span id="payAmount">₹0</span></h3>
+    <div class="card-sub">Pay on this UPI id, then paste the UTR / transaction id below.</div>
+
+    <div class="section-title" style="margin-bottom:8px"><i class="fas fa-id-card"></i> UPI id</div>
+    <div class="copy-box"><span id="upiId">—</span><button class="btn btn-sm btn-ghost" id="copyUpi" type="button"><i class="fas fa-copy"></i> Copy</button></div>
+
+    <div style="height:12px"></div>
+    <a class="btn" id="upiPay" href="#"><i class="fas fa-mobile-screen"></i> Open UPI app</a>
+
+    <div class="note info" style="margin-top:14px"><i class="fas fa-circle-info"></i> Order id: <b id="orderIdText">—</b></div>
+
+    <div class="input-label"><i class="fas fa-receipt"></i> UTR / transaction id</div>
+    <input type="text" id="utr" placeholder="12 digit UTR number" autocomplete="off" />
+    <div style="height:14px"></div>
+    <button class="btn" id="utrBtn" type="button"><i class="fas fa-paper-plane"></i> Submit for verification</button>
+    <div id="step2Result"></div>
+  </section>
+
+  <!-- step 3 -->
+  <section class="card" id="step3" hidden>
+    <h3><i class="fas fa-hourglass-half" style="color:var(--brand)"></i> Verification</h3>
+    <div class="card-sub">Owner is checking your payment. This page updates automatically.</div>
+    <div style="text-align:center;margin:18px 0">
+      <div class="countdown" id="waitDots">• • •</div>
+      <div class="muted" id="waitText">Waiting for approval…</div>
+    </div>
+    <div id="step3Result"></div>
+    <a class="btn btn-ghost" data-cfg-href="contact.whatsapp" href="#" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i> Chat with owner</a>
+  </section>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> DALALXFF</span>
+    <span><a href="/">Home</a> • <a href="/support">Support</a></span>
+  </footer>
+</main>
+
+<script src="/js/core.js"></script>
+<script src="/js/page-buycoupon.js"></script>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Support & Help | DALALXFF</title>
+<meta name="description" content="DALALXFF support: WhatsApp, Telegram, service timing and answers to common questions." />
+<meta property="og:title" content="Support & Help | DALALXFF" />
+<meta property="og:description" content="Get help on WhatsApp or Telegram, check service timing and FAQs." />
+<meta property="og:type" content="website" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="icon" href="/assets/logo-mark.svg" type="image/svg+xml" />
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+<link rel="stylesheet" href="/css/theme.css" />
+<link rel="stylesheet" href="/css/layout.css" />
+<link rel="stylesheet" href="/css/pages.css" />
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="/"><img src="/assets/logo.svg" alt="DALALXFF" /></a>
+    <nav class="nav">
+      <a href="/"><i class="fas fa-bolt"></i><span>Send Likes</span></a>
+      <a href="/buycoupon" class="cta"><i class="fas fa-ticket-alt"></i><span>Buy Coupon</span></a>
+    </nav>
+  </div>
+</header>
+
+<main class="narrow">
+  <section class="hero" style="padding-top:24px">
+    <h1>Need <span class="gradient-text">help?</span></h1>
+    <p>Hum roz <b id="svcWindow">06:30 - 22:00 IST</b> tak online hote hain.</p>
+  </section>
+
+  <div class="grid cols-2" style="margin-top:6px">
+    <a class="card" data-cfg-href="contact.whatsapp" href="#" target="_blank" rel="noopener">
+      <h3><i class="fab fa-whatsapp" style="color:#25d366"></i> WhatsApp</h3>
+      <div class="card-sub">Fastest reply for orders and codes.</div>
+    </a>
+    <a class="card" data-cfg-href="contact.telegram" href="#" target="_blank" rel="noopener">
+      <h3><i class="fab fa-telegram" style="color:#2aabee"></i> Telegram</h3>
+      <div class="card-sub">Owner par direct message.</div>
+    </a>
+    <a class="card" data-cfg-href="contact.whatsappChannel" href="#" target="_blank" rel="noopener">
+      <h3><i class="fas fa-bullhorn" style="color:var(--brand)"></i> Updates channel</h3>
+      <div class="card-sub">Offers aur service updates.</div>
+    </a>
+    <div class="card">
+      <h3><i class="fas fa-clock" style="color:var(--brand)"></i> Service timing</h3>
+      <div class="card-sub" id="timingText">Loading…</div>
+    </div>
+  </div>
+
+  <div class="section-title"><i class="fas fa-circle-question"></i> Common questions</div>
+
+  <div class="card">
+    <h3>Likes kitne time me aate hain?</h3>
+    <div class="card-sub">Normally 2-5 second. API busy ho to 1 minute tak lag sakta hai.</div>
+  </div>
+  <div class="card">
+    <h3>Ek UID ko din me kitni baar likes mil sakti hain?</h3>
+    <div class="card-sub" id="limitText">Loading…</div>
+  </div>
+  <div class="card">
+    <h3>Code ka balance kaise dekhein?</h3>
+    <div class="card-sub">Home page par code daalte hi balance dikh jata hai.</div>
+  </div>
+  <div class="card">
+    <h3>Payment ke baad code nahi mila?</h3>
+    <div class="card-sub">UTR sahi hone par owner turant approve karta hai. 10 minute se zyada ho gaya to WhatsApp kijiye.</div>
+  </div>
+  <div class="card">
+    <h3>Account ban ka risk hai?</h3>
+    <div class="card-sub">Nahi. Likes official-style API se jaate hain, koi login ya password nahi chahiye — sirf UID.</div>
+  </div>
+
+  <footer class="site-footer">
+    <span>© <span id="year"></span> DALALXFF</span>
+    <span><a href="/">Home</a> • <a href="/buycoupon">Buy coupon</a></span>
+  </footer>
+</main>
+
+<script src="/js/core.js"></script>
+<script>
+  (async () => {
+    const cfg = await FFL.applyConfig();
+    document.getElementById("year").textContent = new Date().getFullYear();
+    const w = `${cfg.service.openTime} - ${cfg.service.closeTime} IST`;
+    document.getElementById("svcWindow").textContent = w;
+    document.getElementById("timingText").innerHTML =
+      `${w} — abhi <b>${cfg.service.open ? "OPEN" : "CLOSED"}</b>`;
+    document.getElementById("limitText").textContent =
+      `${cfg.service.dailyLimitPerUid} delivery per UID per day (${FFL.nfmt(cfg.service.likesPerRequest)} likes per delivery).`;
+  })();
+</script>
+</body>
+</html>
